@@ -8,7 +8,8 @@ number = 0
 dino_king_spawn_locations = ["scrapyard", "desert", "beach"]
 
 #functions
-def boss_calculator(spawn_locations, last_spawn, number):
+def boss_calculator(spawn_locations, number):
+    last_spawn = input(f"What was the latest spawn location?{spawn_locations} ")
     for spawn in spawn_locations:
         if last_spawn == spawn:
             if spawn == spawn_locations[-1]:
@@ -21,5 +22,4 @@ What_to_calculate = input("What do you want to calculate?(boss, gems, luck) ")
 if What_to_calculate.lower() == "boss":
     what_boss = input(f"What boss do you want to find?{boss_list} ")
     if what_boss.lower() == "dino king":
-        last_spawn = input(f"What was the latest spawn location?{dino_king_spawn_locations} ")
-        boss_calculator(dino_king_spawn_locations, last_spawn, number)
+        boss_calculator(dino_king_spawn_locations, number)
