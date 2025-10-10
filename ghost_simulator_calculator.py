@@ -1,8 +1,9 @@
 #List of bosses with set spawn orders
 boss_list = ["dino king", "grim", "jolly roger", "anomaly", "anonymous", "lord of luck", "spade harbringer"]
 
-#Used for for-loops
+#Used for loops and math
 number = 0
+multiplier = 1
 
 #List of bosses spawn locations
 dino_king_spawn_locations = ["junkyard", "desert", "beach"]
@@ -43,3 +44,19 @@ if What_to_calculate.lower() == "boss":
         boss_calculator(lord_of_luck_spawn_locations, number)
     elif what_boss.lower() == "spade harbringer":
         boss_calculator(spade_harbringer_spawn_locations, number)
+elif What_to_calculate.lower() == "gems":
+    gum_or_not = input("Do you have gum? ")
+    if gum_or_not.lower() == "yes":
+        what_gum = input("What gum are you going to use? ")
+        if what_gum.lower() == "basic gem gum":
+            multiplier = multiplier * 2
+        elif what_gum.lower() == "ghostly gem gum":
+            multiplier = multiplier * 3
+        elif what_gum.lower() == "glitchy gem gum":
+            multiplier = multiplier * 4
+        elif what_gum.lower() == "enchanted gem gum":
+            multiplier = multiplier * 5
+    friend_boost_or_not = input("Do you have a friend boost? ")
+    if friend_boost_or_not.lower() == "yes":
+        multiplier = multiplier * 1.1
+    print(f"Your total gem boost is x{multiplier}")
