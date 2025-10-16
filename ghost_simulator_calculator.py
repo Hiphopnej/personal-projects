@@ -1,8 +1,7 @@
 #List of bosses with set spawn orders
 boss_list = ["dino king", "grim", "jolly roger", "anomaly", "anonymous", "lord of luck", "spade harbringer"]
 
-#Used for loops and math
-number = 0
+#Used for math
 multiplier = 1
 
 #List of bosses spawn locations
@@ -15,35 +14,28 @@ lord_of_luck_spawn_locations = ["thexz's island", "covenk's island", "makkiemon'
 spade_harbringer_spawn_locations = ["castle gardens", "crystal canyon", "enchanted jungle", "underwater ruins", "fantasy courtyard", "phantom castle", "scrap city", "blue forest", "floating bridge", "hidden caverns"]
 
 #functions
-def boss_calculator(spawn_locations, number):
-    last_spawn = input(f"What was the latest spawn location?{spawn_locations} ")
-    for spawn in spawn_locations:
-        if last_spawn == spawn:
-            if spawn == spawn_locations[-1]:
-                print(f"The next spawn location is {spawn_locations[0]}")
-            else:
-                print(f"The next spawn location is {spawn_locations[number + 1]}")
-        number += 1
+def boss_calculator(spawn_locations):
+    print(f"The spawn order is {spawn_locations}")
 
 #Main
 What_to_calculate = input("What do you want to calculate?(boss, gems, luck) ")
 if What_to_calculate.lower() == "boss":
-    what_boss = input(f"What boss do you want to find?{boss_list} ")
+    what_boss = input(f"What boss do you want the spawn order for{boss_list} ")
     if what_boss.lower() == "dino king":
-        boss_calculator(dino_king_spawn_locations, number)
+        boss_calculator(dino_king_spawn_locations)
     elif what_boss.lower() == "grim":
-        boss_calculator(grim_spawn_locations, number)
+        boss_calculator(grim_spawn_locations)
     elif what_boss.lower() == "jolly roger":
-        boss_calculator(jolly_roger_locations, number)
+        boss_calculator(jolly_roger_locations)
     elif what_boss.lower() == "anomaly":
         print("Note that the program will always say that the next spawn location is the same if its a duplicated spawn even if its the ladder of the two")
-        boss_calculator(anomaly_spawn_locations, number)
+        boss_calculator(anomaly_spawn_locations)
     elif what_boss.lower() == "anonymous":
-        boss_calculator(anonymous_spawn_locations, number)
+        boss_calculator(anonymous_spawn_locations)
     elif what_boss.lower() == "lord of luck":
-        boss_calculator(lord_of_luck_spawn_locations, number)
+        boss_calculator(lord_of_luck_spawn_locations)
     elif what_boss.lower() == "spade harbringer":
-        boss_calculator(spade_harbringer_spawn_locations, number)
+        boss_calculator(spade_harbringer_spawn_locations)
 elif What_to_calculate.lower() == "gems":
     gum_or_not = input("Do you have gum? ")
     if gum_or_not.lower() == "yes":
