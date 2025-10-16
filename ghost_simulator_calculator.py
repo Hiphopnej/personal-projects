@@ -28,7 +28,6 @@ if What_to_calculate.lower() == "boss":
     elif what_boss.lower() == "jolly roger":
         boss_calculator(jolly_roger_locations)
     elif what_boss.lower() == "anomaly":
-        print("Note that the program will always say that the next spawn location is the same if its a duplicated spawn even if its the ladder of the two")
         boss_calculator(anomaly_spawn_locations)
     elif what_boss.lower() == "anonymous":
         boss_calculator(anonymous_spawn_locations)
@@ -39,15 +38,26 @@ if What_to_calculate.lower() == "boss":
 elif What_to_calculate.lower() == "gems":
     gum_or_not = input("Do you have gum? ")
     if gum_or_not.lower() == "yes":
-        what_gum = input("What gum are you going to use? ")
-        if what_gum.lower() == "basic gem gum":
+        what_gum = input("What gum are you going to use?(basic, ghostly etc) ")
+        if what_gum.lower() == "basic":
             multiplier = multiplier * 2
-        elif what_gum.lower() == "ghostly gem gum":
+        elif what_gum.lower() == "ghostly":
             multiplier = multiplier * 3
-        elif what_gum.lower() == "glitchy gem gum":
+        elif what_gum.lower() == "glitchy":
             multiplier = multiplier * 4
-        elif what_gum.lower() == "enchanted gem gum":
+        elif what_gum.lower() == "enchanted":
             multiplier = multiplier * 5
+    rift_gum_or_not = input("Are you going to use rift gum? ")
+    if rift_gum_or_not.lower() == "yes":
+        what_rift_gum = input("What rift gum are you going to use?(basic, ghostly etc) ")
+        if what_rift_gum == "basic":
+            multiplier = multiplier * 50
+        elif what_rift_gum == "ghostly":
+            multiplier = multiplier * 102
+        elif what_rift_gum == "glitchy":
+            multiplier = multiplier * 155
+        elif what_rift_gum == "enchanted":
+            multiplier = multiplier * 208
     friend_boost_or_not = input("Do you have a friend boost? ")
     if friend_boost_or_not.lower() == "yes":
         multiplier = multiplier * 1.1
